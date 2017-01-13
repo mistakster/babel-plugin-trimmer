@@ -31,13 +31,18 @@ import React from 'react';
 import {PureComponent} from 'react-pure-render';
 
 export default class Testimonial extends PureComponent {
-	render() {
-		return (
-			<div className="testimonial">{this.props.text}</div>
-		);
-	}
+  render() {
+    return (
+      <div className="testimonial">{this.props.text}</div>
+    );
+  }
 }
 ```
 
 So, we keep that reference and build CSS styles for our component.
 But at the same time we got rid of React things.
+
+## Links
+
+* [AST Explorer](https://astexplorer.net/)
+* [Babel Plugin Handbook](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md)
