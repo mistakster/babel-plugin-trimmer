@@ -1,4 +1,9 @@
-const code = `
+const assert = require('assert');
+const babelCore = require('babel-core');
+
+describe('babel-plugin-trimmer', function () {
+  it('should work', function () {
+    const code = `
 function decrement(a) {
   return a - 1;
 }
@@ -13,10 +18,19 @@ function square(n) {
 }
 `;
 
-const result = require('babel-core').transform(code, {
-  plugins: [
-    '../lib/index.js'
-  ]
-});
+    const result = babelCore.transform(code, {
+      plugins: [
+        './lib/index.js'
+      ]
+    });
 
-console.log(result.code);
+    assert.strictEqual(result.code, `
+function decrement(a) {
+  return a - 1;
+}
+// trim-below
+/**
+ * block comment
+ */`)
+  });
+});
