@@ -1,4 +1,14 @@
+# IDE stuff
 .idea
 *.iml
+
+# downloaded modules
 node_modules
+
+# tests
 test
+
+# misc files
+.editorconfig
+.eslintrc.json
+.gitignore
