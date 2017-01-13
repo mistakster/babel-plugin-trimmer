@@ -15,15 +15,15 @@ function square(n) {
 
 /*
 require('babel-register')({
-	ignore: /(node_modules)/,
-	presets: ['es2015']
+  ignore: /(node_modules)/,
+  presets: ['es2015']
 });
 */
 
 const result = require('babel-core').transform(code, {
-	plugins: [
-		'../lib/index.js'
-	]
+  plugins: [
+    '../lib/index.js'
+  ]
 });
 
 console.log(result.code);
