@@ -1,6 +1,6 @@
 const code = `
 function decrement(a) {
-	return a - 1;
+  return a - 1;
 }
 // trim-below
 /**
@@ -12,13 +12,6 @@ function square(n) {
   return n * n;
 }
 `;
-
-/*
-require('babel-register')({
-  ignore: /(node_modules)/,
-  presets: ['es2015']
-});
-*/
 
 const result = require('babel-core').transform(code, {
   plugins: [

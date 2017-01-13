@@ -4,6 +4,7 @@
   "description": "Babel plugin to remove unwanted code",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint lib/ test/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,9 @@
     "babel-register": "^6.4.3",
     "babel-traverse": "^6.4.5",
     "babel-types": "^6.4.5",
-    "babylon": "^6.4.5"
+    "babylon": "^6.4.5",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0"
   }
 }
