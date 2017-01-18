@@ -26,7 +26,17 @@ function printTips() {
 // comment-4
 `;
 
-    const expected = ``;
+    const expected = `
+function Tips() {
+  return 321;
+}
+// comment-1
+/* comment-2 */
+// comment-3
+function printTips() {
+  return 123;
+}
+// comment-4`;
 
     assert.strictEqual(transform(code), expected);
   });
@@ -45,12 +55,12 @@ function printTips() {
 // comment-4
 `;
 
-    const expected = `// comment-3
+    const expected = `
+// comment-3
 function printTips() {
   return 123;
 }
-// comment-4
-`;
+// comment-4`;
 
     assert.strictEqual(transform(code), expected);
   });
@@ -93,7 +103,8 @@ function printTips() {
 // comment-4
 `;
 
-    const expected = `// comment-3
+    const expected = `
+// comment-3
 function printTips() {
   return 123;
 }
