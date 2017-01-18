@@ -31,7 +31,7 @@ function printTips() {
     assert.strictEqual(transform(code), expected);
   });
 
-  it.skip('should trim leave banner comment', () => {
+  it('should trim leave banner comment', () => {
     const code = `
 /* banner */
 // trim-below
@@ -163,7 +163,7 @@ function printTips() {
     assert.strictEqual(transform(code), expected);
   });
 
-  it.skip('should leave banner inside block statement', () => {
+  it('should leave banner inside block statement', () => {
     const code = `
 function Tips() {
   return 321;
