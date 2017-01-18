@@ -11,7 +11,7 @@ function transform(code) {
   return result.code;
 }
 
-describe('babel-plugin-trimmer', () => {
+describe('trim-below', () => {
   it('should trim all code if "trim-below" marker at the top', () => {
     const code = `// trim-below
 function Tips() {
