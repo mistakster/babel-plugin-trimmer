@@ -12,7 +12,26 @@ function transform(code) {
 }
 
 describe('babel-plugin-trimmer', () => {
-  it('should trim all code after "trim-below" marker', () => {
+  it('should trim all code if "trim-below" marker at the top', () => {
+    const code = `// trim-below
+function Tips() {
+  return 321;
+}
+// comment-1
+/* comment-2 */
+// comment-3
+function printTips() {
+  return 123;
+}
+// comment-4
+`;
+
+    const expected = ``;
+
+    assert.strictEqual(transform(code), expected);
+  });
+
+  it('should trim code and comments after "trim-below" marker', () => {
     const code = `
 function Tips() {
   return 321;
@@ -31,6 +50,36 @@ function Tips() {
   return 321;
 }
 // comment-1`;
+
+    assert.strictEqual(transform(code), expected);
+  });
+
+  it('should trim leave all code if "trim-below" marker at the bottom', () => {
+    const code = `
+function Tips() {
+  return 321;
+}
+// comment-1
+/* comment-2 */
+// comment-3
+function printTips() {
+  return 123;
+}
+// comment-4
+// trim-below
+`;
+
+    const expected = `
+function Tips() {
+  return 321;
+}
+// comment-1
+/* comment-2 */
+// comment-3
+function printTips() {
+  return 123;
+}
+// comment-4`;
 
     assert.strictEqual(transform(code), expected);
   });
