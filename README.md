@@ -1,5 +1,7 @@
 # Babel plugin to remove unwanted code
 
+[![Build Status](https://travis-ci.org/mistakster/babel-plugin-trimmer.svg?branch=master)](https://travis-ci.org/mistakster/babel-plugin-trimmer)
+
 It can help to remove a portion of code without changes.
 
 ## Example
