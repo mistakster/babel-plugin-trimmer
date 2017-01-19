@@ -112,6 +112,27 @@ function printTips() {
 
     assert.strictEqual(transform(code), expected);
   });
+  it('should trim the code except footer comments', () => {
+    const code = `
+function Tips() {
+  return 321;
+}
+// comment-1
+// comment-3
+function printTips() {
+  return 123;
+}
+// comment-4
+//trim-above
+//footer
+`;
+
+    const expected = `
+//footer`;
+
+    assert.strictEqual(transform(code), expected);
+  });
+
 
   it('should trim the code before "trim-above" marker inside block statement', () => {
     const code = `
