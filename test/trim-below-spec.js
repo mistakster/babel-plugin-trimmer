@@ -17,6 +17,9 @@ describe('trim-below', () => {
 function Tips() {
   return 321;
 }
+function someTips() {
+  return 2222;
+}
 // comment-1
 /* comment-2 */
 // comment-3
@@ -34,6 +37,9 @@ function printTips() {
   it('should trim leave banner comment', () => {
     const code = `
 /* banner */
+function someTips() {
+  return 2222;
+}
 // trim-below
 function Tips() {
   return 321;
@@ -48,7 +54,10 @@ function printTips() {
 `;
 
     const expected = `
-/* banner */`;
+/* banner */
+function someTips() {
+  return 2222;
+}`;
 
     assert.strictEqual(transform(code), expected);
   });
@@ -59,6 +68,9 @@ function Tips() {
   return 321;
 }
 // comment-1
+function someTips() {
+  return 2222;
+}
 // trim-below
 // comment-3
 function printTips() {
@@ -71,7 +83,10 @@ function printTips() {
 function Tips() {
   return 321;
 }
-// comment-1`;
+// comment-1
+function someTips() {
+  return 2222;
+}`;
 
     assert.strictEqual(transform(code), expected);
   });
@@ -88,6 +103,9 @@ function printTips() {
   return 123;
 }
 // comment-4
+function someTips() {
+  return 2222;
+}
 // trim-below
 `;
 
@@ -101,7 +119,10 @@ function Tips() {
 function printTips() {
   return 123;
 }
-// comment-4`;
+// comment-4
+function someTips() {
+  return 2222;
+}`;
 
     assert.strictEqual(transform(code), expected);
   });
@@ -110,6 +131,9 @@ function printTips() {
     const code = `
 function Tips() {
   return 321;
+}
+function someTips() {
+  return 2222;
 }
 // comment-1
 /*
@@ -127,6 +151,9 @@ function printTips() {
     const expected = `
 function Tips() {
   return 321;
+}
+function someTips() {
+  return 2222;
 }
 // comment-1`;
 
@@ -171,6 +198,9 @@ function Tips() {
 // comment-1
 function printTips() {
   // banner
+    function someTips() {
+    return 2222;
+  }
   // trim-below
   // comment-3
   return x;
@@ -185,6 +215,9 @@ function Tips() {
 // comment-1
 function printTips() {
   // banner
+  function someTips() {
+    return 2222;
+  }
 }
 // comment-4`;
 

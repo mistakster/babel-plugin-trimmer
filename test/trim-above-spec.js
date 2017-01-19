@@ -17,6 +17,9 @@ describe('trim-above', () => {
 function Tips() {
   return 321;
 }
+function someTips() {
+  return 2222;
+}
 // comment-1
 /* comment-2 */
 // comment-3
@@ -29,6 +32,9 @@ function printTips() {
     const expected = `
 function Tips() {
   return 321;
+}
+function someTips() {
+  return 2222;
 }
 // comment-1
 /* comment-2 */
@@ -48,6 +54,9 @@ function Tips() {
 }
 // comment-1
 // trim-above
+function someTips() {
+  return 2222;
+}
 // comment-3
 function printTips() {
   return 123;
@@ -56,6 +65,9 @@ function printTips() {
 `;
 
     const expected = `
+function someTips() {
+  return 2222;
+}
 // comment-3
 function printTips() {
   return 123;
@@ -77,6 +89,9 @@ function printTips() {
   return 123;
 }
 // comment-4
+function someTips() {
+  return 2222;
+}
 // trim-above
 `;
 
@@ -96,6 +111,9 @@ function Tips() {
 trim-above
 
 */
+function someTips() {
+  return 2222;
+}
 // comment-3
 function printTips() {
   return 123;
@@ -104,6 +122,9 @@ function printTips() {
 `;
 
     const expected = `
+function someTips() {
+  return 2222;
+}
 // comment-3
 function printTips() {
   return 123;
@@ -123,12 +144,19 @@ function printTips() {
   return 123;
 }
 // comment-4
+function someTips() {
+  return 2222;
+  //test
+}
+//test
 //trim-above
 //footer
+//test
 `;
 
     const expected = `
-//footer`;
+//footer
+//test`;
 
     assert.strictEqual(transform(code), expected);
   });
