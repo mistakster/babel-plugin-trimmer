@@ -11,4 +11,5 @@ test
 # misc files
 .editorconfig
 .eslintrc.json
+.travis.yml
 .gitignore
