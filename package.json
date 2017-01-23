@@ -12,6 +12,9 @@
     "url": "https://github.com/mistakster/babel-plugin-trimmer.git"
   },
   "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
+  "contributors": [
+    "Dmitry Nikulin <dmitry.nikulin@graph.uk>"
+  ],
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.21.0",
