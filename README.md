@@ -41,6 +41,9 @@ const b = 2;
 const b = 2;
 ```
 
+You can use both `trim-below` and `trim-above` directives at
+the same time to cut middle part of the file.
+
 ## Advanced Techniques
 
 Sometimes, you may want to remove actual “rendering” code but keep links to some external dependencies.
