@@ -30,7 +30,7 @@ function printTips() {
 // trim-above
 `;
 
-    const expected = ``;
+    const expected = '';
 
     assert.strictEqual(transform(code), expected);
   });

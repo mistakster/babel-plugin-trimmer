@@ -29,7 +29,7 @@ function printTips() {
 // comment-4
 `;
 
-    const expected = ``;
+    const expected = '';
 
     assert.strictEqual(transform(code), expected);
   });
@@ -223,5 +223,4 @@ function printTips() {
 
     assert.strictEqual(transform(code), expected);
   });
-
 });

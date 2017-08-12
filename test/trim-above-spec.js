@@ -95,7 +95,7 @@ function someTips() {
 // trim-above
 `;
 
-    const expected = ``;
+    const expected = '';
 
     assert.strictEqual(transform(code), expected);
   });
@@ -191,5 +191,4 @@ function printTips() {
 
     assert.strictEqual(transform(code), expected);
   });
-
 });
