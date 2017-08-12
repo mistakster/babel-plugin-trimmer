@@ -7,6 +7,7 @@
     "airbnb-base"
   ],
   "rules": {
+  	"strict": "off",
     "linebreak-style": "off",
     "comma-dangle": ["error", "never"]
   }
